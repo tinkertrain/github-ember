@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 import { get } from '@ember/object';
 
-export const ACCESS_TOKEN = 'ee8da5c58a311cf511a967309431d3a32c88e63e';
+export const ACCESS_TOKEN = 'your_access_token';
 
 export default DS.RESTAdapter.extend({
   host: 'https://api.github.com',
