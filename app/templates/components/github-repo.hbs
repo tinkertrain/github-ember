@@ -1,0 +1,10 @@
+<div class="github-repo__main">
+  {{#link-to 'org.repo.branches' repo.name}}{{repo.name}}{{/link-to}}
+  <span class="badge" title="Repository primary language">{{if repo.language repo.language "Other"}}</span>
+</div>
+
+<div class="github-repo__links">
+  {{#link-to 'org.repo.branches' repo.name}}Branches{{/link-to}}
+  {{#link-to 'org.repo.issues' repo.name}}Issues{{/link-to}}
+  <a href={{repo.html_url}}>GitHub ↗</a>
+</div>

@@ -1,0 +1,16 @@
+<h6 class="u-separator">List of {{if lang lang}} Repos</h6>
+<div class="language-filter">
+  <label>Filter by:</label>
+  {{#each sortedLanguages as |language|}}
+    <button class={{concat "pill" (if (eq lang language) " pill--active" "")}} {{action "filterBy" language}}>{{language}}</button>
+  {{/each}}
+</div>
+<ul class="repos-list">
+  {{#each filteredRepos as |r|}}
+    {{github-repo
+      repo=r
+      _org=myOrg}}
+  {{/each}}
+</ul>
+
+{{outlet}}

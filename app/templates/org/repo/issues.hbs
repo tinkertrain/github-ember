@@ -1,0 +1,13 @@
+{{outlet}}
+
+<h6 class="u-separator">Issues</h6>
+
+<ul class='issues'>
+  {{#each model as |issue|}}
+    <li>
+      <a href={{issue.html_url}}>{{issue.title}}</a>
+    </li>
+  {{else}}
+    <p>Woah, no issues here!</p>
+  {{/each}}
+</ul>

@@ -1,0 +1,11 @@
+<h3>{{model.id}}</h3>
+{{#if model.language}}
+  <strong>Primary Language:</strong> <span class="badge">{{model.language}}</span>
+{{/if}}
+<div>
+  <strong>See:</strong>
+  {{#link-to 'org.repo.branches' model.name}}Branches{{/link-to}}
+  {{#link-to 'org.repo.issues' model.name}}Issues{{/link-to}}
+</div>
+
+{{outlet}}

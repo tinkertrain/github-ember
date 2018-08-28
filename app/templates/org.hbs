@@ -1,0 +1,12 @@
+<header>
+  {{link-to '🔙  to list of orgs' 'orgs' class="plain-link"}}
+</header>
+
+<h1 class="org-name">
+    {{#link-to 'org' model.id class="plain-link"}}
+      <img src={{model.avatar_url}} height='48'>
+      {{model.name}}
+    {{/link-to}}
+</h1>
+
+{{outlet}}
