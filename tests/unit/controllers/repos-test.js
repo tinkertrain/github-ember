@@ -5,8 +5,8 @@ import EmberObject from '@ember/object';
 module('Unit | Controller | repos', function(hooks) {
   setupTest(hooks);
 
-  test('Computed Properties work', function(assert) {
-    assert.expect(4);
+  test('Computed Properties and actions work', function(assert) {
+    assert.expect(6);
 
     const controller = this.owner.lookup('controller:org.repos');
     const model = [
@@ -49,6 +49,22 @@ module('Unit | Controller | repos', function(hooks) {
       controller.get('sortedLanguages'),
       ['Css', 'Html', 'Javascript', 'Other'],
       'CP sortedLanguages is a sorted array'
+    );
+
+    controller.send('filterBy', 'Javascript');
+
+    assert.deepEqual(
+      controller.get('filteredRepos').length,
+      2,
+      'Filtering by language works'
+    );
+
+    controller.send('filterBy', 'Javascript');
+
+    assert.deepEqual(
+      controller.get('filteredRepos').length,
+      5,
+      'Resetting the Filter works'
     );
   });
 });
