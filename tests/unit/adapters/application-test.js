@@ -1,5 +1,6 @@
 import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
+import { ACCESS_TOKEN } from 'github-exercise/adapters/application';
 
 module('Unit | Adapter | application', function(hooks) {
   setupTest(hooks);
@@ -24,12 +25,12 @@ module('Unit | Adapter | application', function(hooks) {
 
     assert.equal(
       urlForQueryRecordOrg,
-      'https://api.github.com/orgs/netflix?access_token=ee8da5c58a311cf511a967309431d3a32c88e63e',
+      `https://api.github.com/orgs/netflix?access_token=${ACCESS_TOKEN}`,
       'Correct urlForQueryRecord for org model'
     );
     assert.equal(
       urlForQueryRecordRepo,
-      'https://api.github.com/repos/netflix/falcor?access_token=ee8da5c58a311cf511a967309431d3a32c88e63e',
+      `https://api.github.com/repos/netflix/falcor?access_token=${ACCESS_TOKEN}`,
       'Correct urlForQueryRecord for repo model'
     );
   });
@@ -61,17 +62,17 @@ module('Unit | Adapter | application', function(hooks) {
 
     assert.equal(
       urlForQueryRepo,
-      'https://api.github.com/orgs/netflix/repos?access_token=ee8da5c58a311cf511a967309431d3a32c88e63e',
+      `https://api.github.com/orgs/netflix/repos?access_token=${ACCESS_TOKEN}`,
       'Correct urlForQuery for repo model'
     );
     assert.equal(
       urlForQueryIssue,
-      'https://api.github.com/orgs/netflix/repos?access_token=ee8da5c58a311cf511a967309431d3a32c88e63e',
+      `https://api.github.com/orgs/netflix/repos?access_token=${ACCESS_TOKEN}`,
       'Correct urlForQuery for issue model'
     );
     assert.equal(
       urlForQueryBranch,
-      'https://api.github.com/orgs/netflix/repos?access_token=ee8da5c58a311cf511a967309431d3a32c88e63e',
+      `https://api.github.com/orgs/netflix/repos?access_token=${ACCESS_TOKEN}`,
       'Correct urlForQuery for branch model'
     );
   });
